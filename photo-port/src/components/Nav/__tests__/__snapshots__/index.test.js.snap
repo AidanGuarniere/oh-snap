@@ -5,6 +5,7 @@ exports[`Nav component matches snapshot DOM node structure 1`] = `
   <header>
     <h2>
       <a
+        data-testid="link"
         href="/"
       >
         <span
@@ -24,7 +25,8 @@ exports[`Nav component matches snapshot DOM node structure 1`] = `
           class="mx-2"
         >
           <a
-            href="about"
+            data-testid="about"
+            href="#about"
           >
             About Me
           </a>

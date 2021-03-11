@@ -5,6 +5,7 @@ import Nav from '..';
 
 afterEach(cleanup);
 
+// check for Nav component on DOM 
 describe("Nav component", () => {
   // test 1
   it("renders", () => {
@@ -17,3 +18,21 @@ describe("Nav component", () => {
 
   });
 });
+
+// check for emoji content in Nav by label 
+describe('emoji is visible', () => {
+  it('inserts emoji into the h2', () => {
+  const { getByLabelText } = render(<Nav />);
+
+  expect(getByLabelText('camera')).toHaveTextContent('📸');
+  });
+});
+
+// check for visible link content in Nav by data-testid
+describe('links are visible', () => {
+  it('inserts text into the links', () => {
+    const { getByTestId } = render(<Nav />);
+    expect(getByTestId('link')).toHaveTextContent('Oh Snap!');
+    expect(getByTestId('about')).toHaveTextContent('About Me');
+  });
+})
